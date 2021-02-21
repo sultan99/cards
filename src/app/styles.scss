@@ -1,0 +1,40 @@
+/**
+  @tag: section
+  @component: Layout
+*/
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+  @tag: div
+  @component: Header
+*/
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 16px 0;
+}
+
+/**
+  @tag: h1
+  @component: Title
+*/
+.title {
+  margin: 0;
+}
+
+/**
+  @tag: div
+  @component: List
+*/
+.grid {
+  display: grid;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin: 16px;
+}

@@ -1,0 +1,5 @@
+*.scss.d.ts
+**/dist
+**/node_modules
+.idea
+.vscode

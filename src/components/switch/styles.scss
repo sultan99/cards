@@ -1,0 +1,76 @@
+/**
+  @tag: label
+  @component: Label
+  size?: --size 28px
+*/
+.label {
+  --color-active: #90edff;
+  --height: 28px;
+  --height-slider: calc(var(--height) * 0.80);
+  --size-emoji: calc(var(--height) / 2);
+  --width: calc(var(--height) * 2);
+  border-radius: var(--height);
+  display: inline-block;
+  height: var(--height);
+  overflow: hidden;
+  position: relative;
+  width: var(--width);
+}
+
+/**
+  @tag: input
+  @component: Input
+*/
+.input {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+
+  &:checked + .slider {
+    background-color: var(--color-active);
+    transform: translateX(0) scale(1);
+  }
+}
+
+
+/**
+  @tag: div
+  @component: Slider
+*/
+.slider {
+  align-items: center;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  transform: translateX(-33.33%);
+  position: absolute;
+  transition: all 0.4s;
+  width: 150%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+/**
+  @tag: span
+  @component: Button
+*/
+.button {
+  background-color: white;
+  border-radius: 50%;
+  content: "";
+  height: var(--height-slider);
+  justify-self: center;
+  width: var(--height-slider);
+}
+
+/**
+  @tag: span
+  @component: Icon
+*/
+.emoji {
+  font-size: var(--size-emoji);
+  opacity: 0.75;
+  text-align: center;
+  user-select: none;
+}
