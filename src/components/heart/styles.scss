@@ -16,6 +16,6 @@
     background-color: #ff056d;    
   }
   &.gray {
-    background-color: #e0e0e0;
+    background-color: var(--theme-ghost);
   }
 }

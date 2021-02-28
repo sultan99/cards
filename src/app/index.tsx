@@ -2,9 +2,12 @@ import React, {useCallback, useEffect, useReducer, useState} from 'react'
 import Card from '@/components/card'
 import Switch from '@/components/switch'
 import fetchData, {Post} from './fetch-data'
-import {Header, Layout, List, Title} from './styles.scss'
+import {Actions, Header, Layout, List, Title} from './styles.scss'
+import {LayoutProps} from './styles.scss'
 
 const MAX_RECORDS = 100
+
+type ThemeType = LayoutProps[`theme`]
 
 function reducer(state: Post[], action): Post[] {
   if (action.type === `update`) {
@@ -21,16 +24,21 @@ function reducer(state: Post[], action): Post[] {
 }
 
 const App = () => {
-  const [hoverEnabled, setHoverEnabled] = useState(false)
+  const [theme, setTheme] = useState<ThemeType>(`light`)
+  const [hoverEnabled, setHoverEnabled] = useState(true)
   const [data, dispatch] = useReducer(reducer, [])
+
+  const onThemeChange = useCallback(({target}) => {
+    setTheme(() => target.checked ? `light` : `dark`)
+  }, [])
+
+  const onHoverChange = useCallback(({target}) => {
+    setHoverEnabled(() => target.checked)
+  }, [])
 
   const onCardClick = useCallback(({currentTarget}) => {
     const postId = currentTarget.id
     dispatch({type: `like`, postId})
-  }, [])
-
-  const onSwitchChange = useCallback(({target}) => {
-    setHoverEnabled(() => target.checked)
   }, [])
 
   useEffect(() => {
@@ -39,10 +47,21 @@ const App = () => {
   }, [])
 
   return (
-    <Layout>
+    <Layout theme={theme}>
       <Header>
         <Title>Stylin demo application</Title>
-        <Switch checked={hoverEnabled} onChange={onSwitchChange}/>
+        <Actions>
+          <Switch
+            checked={hoverEnabled}
+            icons={[`🪁`, `🗿`]}
+            onChange={onHoverChange}
+          />
+          <Switch
+            checked={theme === `light`}
+            icons={[`🌞`, `🌕`]}
+            onChange={onThemeChange}
+          />
+        </Actions>
       </Header>
       <List>
         {data.map(post =>

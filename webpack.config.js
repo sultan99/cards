@@ -31,12 +31,14 @@ module.exports = {
         use: [
           `@stylin/ts-loader`,
           `@stylin/msa-loader`,
+          // {loader: `c:/stylin/packages/ts-loader/dist`},
           // {loader: `c:/stylin/packages/msa-loader/dist`},
           {
             loader: MiniCssExtractPlugin.loader,
             options: {publicPath: rootPath(`public/css`)}
           },
-          {loader: `css-loader`, options: {modules: true}},
+          // `style-loader`,
+          `css-loader?modules=true`,
           `sass-loader`,
         ],
       },
@@ -51,7 +53,8 @@ module.exports = {
   resolve: {
     extensions: [`.ts`, `.tsx`, `.scss`, `.js`, `.jsx`],
     alias: {
-      '@': rootPath(`./src`)
+      '@': rootPath(`./src`),
+      // '@stylin/style': `c:/stylin/packages/style/dist`,
     }
   },
   devServer: {

@@ -4,7 +4,7 @@
   hoverEnabled?: true
 */
 .card-box {
-  background-color: #fff;
+  background-color:var(--theme-card-skin);
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
   cursor: pointer;
@@ -26,7 +26,7 @@
   @component: Picture
 */
 .picture {
-  background-color: #e0e0e0;
+  background-color: var(--theme-ghost);
   height: 340px;
   object-fit: cover;
 }

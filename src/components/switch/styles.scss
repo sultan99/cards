@@ -4,7 +4,6 @@
   size?: --size 28px
 */
 .label {
-  --color-active: #90edff;
   --height: 28px;
   --height-slider: calc(var(--height) * 0.80);
   --size-emoji: calc(var(--height) / 2);
@@ -15,6 +14,9 @@
   overflow: hidden;
   position: relative;
   width: var(--width);
+  &:hover .button {
+    background-color: white;
+  }
 }
 
 /**
@@ -27,8 +29,11 @@
   position: absolute;
 
   &:checked + .slider {
-    background-color: var(--color-active);
+    background-color: var(--theme-switch-active);
     transform: translateX(0) scale(1);
+    > .button {
+      background-color: white;
+    }
   }
 }
 
@@ -39,7 +44,7 @@
 */
 .slider {
   align-items: center;
-  background-color: #e0e0e0;
+  background-color: var(--theme-ghost);
   cursor: pointer;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -56,9 +61,8 @@
   @component: Button
 */
 .button {
-  background-color: white;
+  background-color: var(--theme-switch-skin);
   border-radius: 50%;
-  content: "";
   height: var(--height-slider);
   justify-self: center;
   width: var(--height-slider);

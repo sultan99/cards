@@ -1,7 +1,7 @@
 # Cards
 It is demo application of [Stylin](https://github.com/sultan99/stylin) usage.
 
-Check [online (codesandbox)](https://codesandbox.io/s/condescending-grass-kth4m)
+Check [online (codesandbox)](https://codesandbox.io/s/github/sultan99/cards/tree/main)
 
 <img src="./preview.png" />
 <br/>

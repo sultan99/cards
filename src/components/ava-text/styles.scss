@@ -33,6 +33,6 @@
   @component: Description
 */
 .description {
-  color: rgba(0, 0, 0, 0.54);
+  color: var(--theme-secondary-text);
   font-size: 14px;
 }

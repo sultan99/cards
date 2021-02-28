@@ -3,16 +3,17 @@ import {Input, Icon, Label, Slider, Button} from './styles.scss'
 
 interface SwitchProps {
   checked: boolean
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  icons: [string, string]
+  onChange: ChangeEventHandler<HTMLInputElement>
 }
 
-const Switch: FC<SwitchProps> = ({checked, onChange}) => (
+const Switch: FC<SwitchProps> = ({checked, icons, onChange}) => (
   <Label>
     <Input type="checkbox" checked={checked} onChange={onChange}/>
     <Slider>
-      <Icon>🪁</Icon>
+      <Icon>{icons[0]}</Icon>
       <Button/>
-      <Icon>🗿</Icon>
+      <Icon>{icons[1]}</Icon>
     </Slider>
   </Label>
 )
