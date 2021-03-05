@@ -3,12 +3,13 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "jsx": "react",
-    "module": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "Node",
+    "noEmit": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "sourceMap": true,
-    "target": "ES6",
+    "target": "ESNext",
     "lib": [
       "DOM",
       "ES2016"
