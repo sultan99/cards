@@ -24,7 +24,7 @@ export const usePosts = createState<PostState>({
       .then(res => res.json())
       .then(toPosts)
       .then(set(`posts`))
-      .then(() => set(`loading`, false))
+      .finally(() => set(`loading`, false))
   }
 })
 

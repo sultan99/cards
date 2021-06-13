@@ -13,7 +13,7 @@
     "tsc": "tsc -w"
   },
   "dependencies": {
-    "@holycow/state": "^0.1.0-alpha.0",
+    "@holycow/state": "^0.1.0-alpha.1",
     "@stylin/style": "0.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

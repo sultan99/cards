@@ -1,11 +1,11 @@
 import Card from '@/components/card'
-import React from 'react'
+import React, {MouseEvent} from 'react'
 import {List} from './styles.scss'
 import {useApp, usePosts} from '@/store'
 
-const onCardClick = ({currentTarget}) => {
+const onCardClick = ({currentTarget}: MouseEvent<HTMLElement>) => {
   const {likePost} = usePosts()
-  const postId = currentTarget.id as string
+  const postId = currentTarget.id
   likePost(postId)
 }
 

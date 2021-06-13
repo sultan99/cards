@@ -11,19 +11,19 @@ export interface Post {
   photoUrl: string
 }
 
-const random = (min: number, max: number): number => (
+const random = (min: number, max: number) => (
   Math.floor(Math.random() * (max - min + 1)) + min
 )
 
-const capitalize = (str: string): string => (
+const capitalize = (str: string) => (
   str.charAt(0).toUpperCase() + str.slice(1)
 )
 
-const toCapitalize = (str: string): string => (
+const toCapitalize = (str: string) => (
   str.split(` `).map(capitalize).join(` `)
 )
 
-function genUserAva(name: string): string {
+function genUserAva(name: string) {
   const gender = random(0, 1) ? `male` : `female`
   return `https://avatars.dicebear.com/api/${gender}/${name}.svg`
 }
@@ -37,17 +37,33 @@ function genLastVisit() {
 const statusText = {
   online: `Hi, I'm online!`,
   busy: `Not now, sorry I'm busy`,
+  offline: ``,
 }
 
 function genStatus() {
   const chance = random(0, 10)
-  const status = chance < 3 ? `online` : chance < 5 ? `busy` : `offline`
-  return {status, lastVisit: statusText[status] || genLastVisit()}
+  const status = chance < 3 ? `online` : chance < 5 ? `busy` : `offline` as PostAuthor[`status`]
+  const lastVisit = statusText[status] || genLastVisit()
+  return {status, lastVisit}
 }
 
 const offset = random(1, 100)
 
-export const toPosts = ({results}): Post[] => results.map((item, index) => ({
+type PicSum = {
+  results: {
+    login: {
+      uuid: string
+    },
+    name: {
+      first: string
+      last: string
+    }
+  }[]
+}
+
+type ToPosts = (res: PicSum) => Post[]
+
+export const toPosts: ToPosts = ({results}) => results.map((item, index) => ({
   id: item.login.uuid,
   photoUrl: `https://picsum.photos/id/${index + offset}/400`,
   liked: random(1, 10) <= 2,
