@@ -46,7 +46,8 @@ function genStatus() {
 }
 
 const offset = random(1, 100)
-const pickData = ({results}): Post[] => results.map((item, index) => ({
+
+export const toPosts = ({results}): Post[] => results.map((item, index) => ({
   id: item.login.uuid,
   photoUrl: `https://picsum.photos/id/${index + offset}/400`,
   liked: random(1, 10) <= 2,
@@ -56,14 +57,3 @@ const pickData = ({results}): Post[] => results.map((item, index) => ({
     ... genStatus(),
   }
 }))
-
-const fetchData = (limit: number, setData: (data: Post[]) => void) => {
-  fetch(`https://randomuser.me/api/?nat=us,dk,fr,gb&results=${limit}`)
-    .then(response => response.json())
-    .then(pickData)
-    .then(setData)
-
-  return () => {}
-}
-
-export default fetchData

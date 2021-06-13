@@ -10,7 +10,7 @@ Check [online (codesandbox)](https://codesandbox.io/s/github/sultan99/cards/tree
 
 
 ## Getting started
-Don't warry be magic 🧙‍
+Don't worry be magic 🧙‍
 
 🧙‍ Three magic commands to get the project:
 ```sh
