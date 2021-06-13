@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import {AvatarBox, Crop, Dot, Image} from './styles.scss'
-import {PostAuthor} from '@/app/fetch-data'
+import {PostAuthor} from '@/store/mock-data'
 import url from '@/url'
 
 export interface AvatarProps {

@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import Avatar from '@/components/avatar'
 import {AvaBox, Description, TextBox, Title} from './styles.scss'
-import {PostAuthor} from '@/app/fetch-data'
+import {PostAuthor} from '@/store/mock-data'
 
 const AvaText: FC<PostAuthor> = ({imageUrl, lastVisit, name, status}) => (
   <AvaBox>

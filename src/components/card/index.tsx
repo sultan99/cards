@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 import Author from '@/components/ava-text'
 import Heart from '@/components/heart'
 import {CardBox, Picture, Footer} from './styles.scss'
-import {Post} from '@/app/fetch-data'
+import {Post} from '@/store/mock-data'
 
 interface CardProps {
   hoverEnabled?: boolean
