@@ -36,7 +36,7 @@ module.exports = {
             options: {publicPath: rootPath(`public/css`)}
           },
           // `style-loader`,
-          `css-loader?modules=true`,
+          `css-loader?modules=local`,
           `sass-loader`,
         ],
       },
@@ -55,7 +55,7 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: rootPath(`./dist`),
+    static: rootPath(`./dist`),
   },
   plugins: [
     new MiniCssExtractPlugin(),
