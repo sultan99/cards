@@ -5,6 +5,10 @@
   "author": "sultan99",
   "license": "MIT",
   "main": "index.js",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "build": "npm run clean && webpack --mode production --progress",
     "clean": "rm -rf ./dist",
