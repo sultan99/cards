@@ -3,9 +3,13 @@ import Switch from '@/components/switch'
 import {Actions, Header, Title} from './styles.scss'
 import {useApp} from '@/store'
 
+const handleHover = ({target}) => {
+  const {enableHover} = useApp()
+  enableHover(target.checked)
+}
+
 const TopBar = () => {
-  const {hoverEnabled, theme} = useApp()
-  const {enableHover, toggleTheme} = useApp()
+  const {hoverEnabled, theme, toggleTheme} = useApp()
 
   return (
     <Header>
@@ -14,7 +18,7 @@ const TopBar = () => {
         <Switch
           checked={hoverEnabled}
           icons={[`🪁`, `🗿`]}
-          onChange={({target}) => enableHover(target.checked)}
+          onChange={handleHover}
         />
         <Switch
           checked={theme === `light`}

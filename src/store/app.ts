@@ -1,12 +1,13 @@
-import {createState, Action} from '@holycow/state'
+import type {Action, ActionPayload} from '@holycow/state'
+import {createState} from '@holycow/state'
 
 type Theme = `dark` | `light`
 
 type AppState = {
   theme: Theme
   hoverEnabled: boolean
-  enableHover: Action<boolean, AppState>
-  toggleTheme: Action<undefined, AppState>
+  enableHover: ActionPayload<AppState, boolean>
+  toggleTheme: Action<AppState>
 }
 
 export const useApp = createState<AppState>({

@@ -1,11 +1,11 @@
 import {Post, toPosts} from './mock-data'
-import {createState, Action} from '@holycow/state'
+import {createState, ActionPayload} from '@holycow/state'
 
 type PostState = {
   posts: Post[]
   loading: boolean
-  likePost: Action<Post[`id`], PostState>
-  fetchPosts: Action<number, PostState>
+  likePost: ActionPayload<PostState, Post[`id`]>
+  fetchPosts: ActionPayload<PostState, number>
 }
 
 export const usePosts = createState<PostState>({
