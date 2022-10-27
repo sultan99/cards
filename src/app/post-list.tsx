@@ -4,9 +4,8 @@ import {List} from './styles.scss'
 import {useApp, usePosts} from '@/store'
 
 const onCardClick = ({currentTarget}: MouseEvent<HTMLElement>) => {
-  const {likePost} = usePosts()
   const postId = currentTarget.id
-  likePost(postId)
+  usePosts.likePost(postId)
 }
 
 const PostList = () => {

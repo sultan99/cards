@@ -1,23 +1,22 @@
+import type {Action} from '@holycow/state'
 import {Post, toPosts} from './mock-data'
-import {createState, ActionPayload} from '@holycow/state'
+import {action, createState} from '@holycow/state'
 
 type PostState = {
   posts: Post[]
   loading: boolean
-  likePost: ActionPayload<PostState, Post[`id`]>
-  fetchPosts: ActionPayload<PostState, number>
+  likePost: Action<PostState, [Post[`id`]]>
+  fetchPosts: Action<PostState, [number]>
 }
 
 export const usePosts = createState<PostState>({
   posts: [],
   loading: false,
-  likePost: set => postId => set(`posts`, posts =>
-    posts.map(post => post.id === postId
-      ? {...post, liked: !post.liked}
-      : post
-    )
-  ),
-  fetchPosts: set => limit => ({posts, loading}) => {
+  likePost: action(({set, posts}) => postId => {
+    const index = posts.findIndex(post => post.id === postId)
+    set(`posts.${index}.liked`, liked => !liked)
+  }),
+  fetchPosts: action(({set, posts, loading}) => limit => {
     if (posts.length || loading) return
     set(`loading`, true)
     fetch(`https://randomuser.me/api/?nat=us,dk,fr,gb&results=${limit}`)
@@ -25,7 +24,7 @@ export const usePosts = createState<PostState>({
       .then(toPosts)
       .then(set(`posts`))
       .finally(() => set(`loading`, false))
-  }
+  })
 })
 
 export default usePosts
