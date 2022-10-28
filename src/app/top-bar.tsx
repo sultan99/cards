@@ -6,7 +6,7 @@ import {useApp} from '@/store'
 
 const handleHover = compose(
   useApp.enableHover,
-  pick(`target.value.checked`),
+  pick(`target.checked`),
 )
 
 const TopBar = () => {
