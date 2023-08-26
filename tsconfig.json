@@ -12,7 +12,7 @@
     "target": "ESNext",
     "lib": [
       "DOM",
-      "ES2016"
+      "ES2018"
     ],
     "paths": {
       "@/*": [
@@ -20,7 +20,6 @@
       ]
     },
     "typeRoots": [
-      "node_modules/@types",
       "src/types"
     ]
   },
