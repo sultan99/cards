@@ -55,6 +55,7 @@ module.exports = {
     }
   },
   devServer: {
+    allowedHosts: [`all`],
     static: rootPath(`./dist`),
   },
   plugins: [
