@@ -23,10 +23,9 @@ const toCapitalize = (str: string) => (
   str.split(` `).map(capitalize).join(` `)
 )
 
-function genUserAva(name: string) {
-  const gender = random(0, 1) ? `male` : `female`
-  return `https://avatars.dicebear.com/api/${gender}/${name}.svg`
-}
+const genUserAva = (name = ``) => (
+  `https://api.dicebear.com/7.x/pixel-art/svg?seed=${name.toLowerCase()}`
+)
 
 function genLastVisit() {
   const chance = random(0, 8)
