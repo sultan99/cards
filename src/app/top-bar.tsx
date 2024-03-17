@@ -1,8 +1,23 @@
 import React from 'react'
 import Switch from '@/components/switch'
-import {Actions, Header, Title} from './styles.scss'
+import styled from 'styled-components'
 import {compose, pick} from '@holycow/state'
 import {useApp} from '@/store'
+
+const Actions = styled.div`
+  label + label {
+    margin-left: 16px;
+  }
+`
+const Header = styled.header`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 16px 0;
+`
+const Title = styled.h1`
+  margin: 0;
+`
 
 const handleHover = compose(
   useApp.enableHover,
@@ -14,7 +29,7 @@ const TopBar = () => {
 
   return (
     <Header>
-      <Title>Stylin demo application</Title>
+      <Title>Styled-components demo application</Title>
       <Actions>
         <Switch
           checked={hoverEnabled}
