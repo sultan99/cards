@@ -43,7 +43,7 @@ const App = () => {
   fetchPosts(MAX_RECORDS)
   useEffect(() => {
     setTimeout(() => useApp.set(`theme`, `dark`), 2000)
-  })
+  }, [])
 
   return (
     <ThemeProvider theme={themes[theme]}>

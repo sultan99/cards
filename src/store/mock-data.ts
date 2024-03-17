@@ -46,7 +46,7 @@ function genStatus() {
   return {status, lastVisit}
 }
 
-const offset = random(1, 100)
+const offset = 56
 
 type PicSum = {
   results: {
