@@ -1,4 +1,3 @@
-const MiniCssExtractPlugin = require(`mini-css-extract-plugin`)
 const HtmlWebPackPlugin = require(`html-webpack-plugin`)
 const CopyPlugin = require(`copy-webpack-plugin`)
 const path = require(`path`)
@@ -27,20 +26,6 @@ module.exports = {
         }],
       },
       {
-        test: /\.scss$/i,
-        use: [
-          `@stylin/ts-loader`,
-          `@stylin/msa-loader`,
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {publicPath: rootPath(`public/css`)}
-          },
-          // `style-loader`,
-          `css-loader?modules=local`,
-          `sass-loader`,
-        ],
-      },
-      {
         test: /\.(svg)$/i,
         use: [
           {loader: `url-loader`, options: {limit: 2000}},
@@ -49,7 +34,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [`.ts`, `.tsx`, `.scss`, `.js`, `.jsx`],
+    extensions: [`.ts`, `.tsx`, `.js`, `.jsx`],
     alias: {
       '@': rootPath(`./src`),
     }
@@ -59,7 +44,6 @@ module.exports = {
     static: rootPath(`./dist`),
   },
   plugins: [
-    new MiniCssExtractPlugin(),
     new HtmlWebPackPlugin({
       template: rootPath(`./src/index.html`)
     }),
