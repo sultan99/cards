@@ -35,8 +35,14 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {publicPath: rootPath(`public/css`)}
           },
-          // `style-loader`,
-          `css-loader?modules=local`,
+          {loader: `css-loader`,
+            options: {
+              modules: {
+                mode: `local`,
+                localIdentName: `[hash:base64:3]`
+              }
+            }
+          },
           `sass-loader`,
         ],
       },
