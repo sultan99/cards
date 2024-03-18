@@ -37,6 +37,15 @@ const Layout = styled.section`
 
 const themes = {dark, light} as const
 
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
+const toggleTheme = async () => {
+  for (let i = 0; i < 10; i++) {
+    await delay(500)
+    useApp.set(`theme`, i % 2 ? `light` : `dark`)
+  }
+}
+
 const App = () => {
   const theme = useApp(`theme`)
   const fetchPosts = usePosts(`fetchPosts`)
@@ -44,7 +53,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={themes[theme]}>
-      <Layout>
+      <Layout onClick={toggleTheme}>
         <TopBar/>
         <PostList/>
       </Layout>

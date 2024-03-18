@@ -23,8 +23,8 @@ const toCapitalize = (str: string) => (
   str.split(` `).map(capitalize).join(` `)
 )
 
-const genUserAva = (name = ``) => (
-  `https://api.dicebear.com/7.x/pixel-art/svg?seed=${name.toLowerCase()}`
+const genUserAva = (id: number) => (
+  `https://api.dicebear.com/7.x/pixel-art/svg?seed=${id}`
 )
 
 function genLastVisit() {
@@ -46,8 +46,6 @@ function genStatus() {
   return {status, lastVisit}
 }
 
-const offset = 56
-
 type PicSum = {
   results: {
     login: {
@@ -64,11 +62,11 @@ type ToPosts = (res: PicSum) => Post[]
 
 export const toPosts: ToPosts = ({results}) => results.map((item, index) => ({
   id: item.login.uuid,
-  photoUrl: `https://picsum.photos/id/${index + offset}/400`,
+  photoUrl: `https://picsum.photos/id/${index + 56}/400`,
   liked: random(1, 10) <= 2,
   author: {
     name: toCapitalize(`${item.name.first} ${item.name.last}`),
-    imageUrl: genUserAva(item.name.first),
+    imageUrl: genUserAva(index),
     ... genStatus(),
   }
 }))
