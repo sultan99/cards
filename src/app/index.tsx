@@ -6,13 +6,22 @@ import {useApp, usePosts} from '@/store'
 
 const MAX_RECORDS = 100
 
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
+const toggleTheme = async () => {
+  for (let i = 0; i < 10; i++) {
+    await delay(500)
+    useApp.set(`theme`, i % 2 ? `light` : `dark`)
+  }
+}
+
 const App = () => {
   const theme = useApp(`theme`)
   const fetchPosts = usePosts(`fetchPosts`)
   fetchPosts(MAX_RECORDS)
 
   return (
-    <Layout theme={theme}>
+    <Layout theme={theme} onClick={toggleTheme}>
       <TopBar/>
       <PostList/>
     </Layout>
