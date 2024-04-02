@@ -1,6 +1,6 @@
 import Card from '@/components/card'
 import React, {MouseEvent} from 'react'
-import {List} from './styles.scss'
+import {List} from './styles.module.scss'
 import {useApp, usePosts} from '@/store'
 
 const onCardClick = ({currentTarget}: MouseEvent<HTMLElement>) => {

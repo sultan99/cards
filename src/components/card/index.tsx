@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import Author from '@/components/ava-text'
 import Heart from '@/components/heart'
-import {CardBox, Picture, Footer} from './styles.scss'
+import {CardBox, Picture, Footer} from './styles.module.scss'
 import {Post} from '@/store/mock-data'
 
 interface CardProps {

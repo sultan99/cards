@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import heartSvg from './heart.svg'
-import {Icon} from './styles.scss'
+import {Icon} from './styles.module.scss'
 import url from '@/url'
 
 interface CardProps {

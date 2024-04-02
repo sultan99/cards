@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {AvatarBox, Crop, Dot, Image} from './styles.scss'
+import {AvatarBox, Crop, Dot, Image} from './styles.module.scss'
 import {PostAuthor} from '@/store/mock-data'
 import url from '@/url'
 

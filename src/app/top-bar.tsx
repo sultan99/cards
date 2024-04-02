@@ -1,6 +1,6 @@
 import React from 'react'
 import Switch from '@/components/switch'
-import {Actions, Header, Title} from './styles.scss'
+import {Actions, Header, Title} from './styles.module.scss'
 import {compose, pick} from '@holycow/state'
 import {useApp} from '@/store'
 

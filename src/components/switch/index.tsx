@@ -1,5 +1,5 @@
 import React, {FC, ChangeEventHandler} from 'react'
-import {Input, Icon, Label, Slider, Button} from './styles.scss'
+import {Input, Icon, Label, Slider, Button} from './styles.module.scss'
 
 interface SwitchProps {
   checked: boolean

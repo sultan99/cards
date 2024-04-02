@@ -2,7 +2,7 @@
   @tag: div
   @component: AvaBox
 */
-.ava-box {
+.ava_box {
   display: flex;
 
   > div + div {
@@ -14,7 +14,7 @@
   @tag: div
   @component: TextBox
 */
-.text-box {
+.text_box {
   display: flex;
   flex-direction: column;
 }
