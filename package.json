@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@holycow/state": "^1.2.0",
-    "@stylin/style": "0.5.0",
+    "@stylin/style": "0.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -20,16 +20,16 @@
     "@rollup/pluginutils": "^5.1.0",
     "@stylin/vite-plugin": "^0.5.4-alpha.0",
     "@types/es6-promise": "^3.3.0",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.23",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "@typescript-eslint/parser": "^7.5.0",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
-    "sass": "^1.72.0",
-    "typescript": "^5.4.3",
-    "vite": "^5.2.8",
+    "sass": "^1.75.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.9",
     "vite-svg-loader": "^5.1.0"
   }
 }
