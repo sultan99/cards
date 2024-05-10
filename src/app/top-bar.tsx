@@ -14,7 +14,7 @@ const TopBar = () => {
 
   return (
     <Header>
-      <Title>Stylin demo application</Title>
+      <Title>Demo application</Title>
       <Actions>
         <Switch
           checked={hoverEnabled}

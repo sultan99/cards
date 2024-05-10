@@ -1,5 +1,5 @@
 # Cards
-It is demo application of [Stylin](https://github.com/sultan99/stylin) usage.
+This is a demo application showcasing the usage of the [Stylin](https://github.com/sultan99/stylin) and [Holy state](https://github.com/sultan99/holycow) libraries.
 
 Check [online (codesandbox)](https://codesandbox.io/s/github/sultan99/cards/tree/main)
 
