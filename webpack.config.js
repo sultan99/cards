@@ -68,5 +68,8 @@ module.exports = {
         {from: rootPath(`./public`)},
       ],
     }),
-  ]
+  ],
+  stats: {
+    errorDetails: true
+  }
 }
